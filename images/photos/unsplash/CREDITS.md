@@ -22,3 +22,9 @@ Each was checked for faces and visible brand logos before upload; edits are note
 | Scrunch Booty Shorts | `scrunch-booty-shorts.jpg` | ROXANA POPOVICI | https://unsplash.com/photos/woman-doing-pilates-workout-on-a-reformer-machine-hiHBILFNah4 | none |
 | Cross Back Bra | `cross-back-bra.jpg` | Patrick Malleret | https://unsplash.com/photos/woman-wearing-white-and-black-tracksuit-set-ynd3t7fTs5o | cropped below the head |
 | Stretch Training Tee | `stretch-training-tee.jpg` | Haryo Setyadi | https://unsplash.com/photos/white-crew-neck-t-shirt-acn5ERAeSb4 | blurred the neck label |
+
+## Homepage category tiles
+
+`tiles/cat-bras.jpg` (Sports Bras) is the Beauty Back Bra photo and `tiles/cat-sets.jpg` (Sets) is the
+Cross Back Support Set photo, both resized/cropped to 1000x1250 (4:5). They are uploaded to the theme as
+`assets/cat-bras.jpg` and `assets/cat-sets.jpg`.

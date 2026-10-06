@@ -28,7 +28,7 @@
           "type": "category",
           "settings": {
             "label": "Sports Bras",
-            "asset": "cat-bras.png",
+            "asset": "cat-bras.jpg",
             "link": "shopify://collections/sports-bras"
           }
         },
@@ -36,7 +36,7 @@
           "type": "category",
           "settings": {
             "label": "Sets",
-            "asset": "cat-sets.png",
+            "asset": "cat-sets.jpg",
             "link": "shopify://collections/matching-sets"
           }
         },
