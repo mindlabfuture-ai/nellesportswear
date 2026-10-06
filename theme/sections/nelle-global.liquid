@@ -1,0 +1,38 @@
+{%- comment -%}
+  Site-wide NELLE styling, rendered once in the header group so it loads on
+  every page. Mirrors the NELLE storefront prototype: black + rose-gold,
+  uppercase tracked headings, "YOUR BAG" cart drawer.
+{%- endcomment -%}
+{% style %}
+  :root { --nelle-rose: #d9a597; --nelle-rose-light: #f6d9cf; --nelle-black: #050505; }
+  body { background: var(--nelle-black); }
+  h1, h2, h3, .h0, .h1, .h2, .h3 { letter-spacing: .08em; }
+
+  /* announcement bar: small tracked caps like the prototype */
+  .announcement-bar__message { letter-spacing: .25em; font-size: 1.1rem; text-transform: uppercase; }
+
+  /* header nav */
+  .header__menu-item span, .menu-drawer__menu-item { text-transform: uppercase; letter-spacing: .2em; font-size: 1.2rem; }
+  .header__heading-logo { filter: drop-shadow(0 0 0 transparent); }
+
+  /* cart drawer heading -> YOUR BAG */
+  .drawer__heading { font-size: 0 !important; }
+  .drawer__heading::before { content: "YOUR BAG"; font-size: 1.6rem; letter-spacing: .3em; font-weight: 600; color: var(--nelle-rose); }
+  .cart__empty-text { font-size: 0 !important; }
+  .cart__empty-text::before { content: "Your bag is empty"; font-size: 2.4rem; }
+
+  /* footer: #### SHOP / HELP / ABOUT / LEGAL / FOLLOW */
+  .footer-block__heading { text-transform: uppercase; letter-spacing: .3em; font-size: 1.2rem !important; color: var(--nelle-rose); }
+  .footer-block__details-content .list-menu__item--link { font-size: 1.4rem; opacity: .8; }
+  .footer-block__details-content .list-menu__item--link:hover { opacity: 1; color: var(--nelle-rose); }
+
+  /* product cards on black */
+  .card__heading, .card-information { text-align: center; }
+  .card__heading a { letter-spacing: .06em; }
+  .price { color: var(--nelle-rose-light); }
+  .button--primary, .shopify-payment-button__button--unbranded { letter-spacing: .2em; text-transform: uppercase; }
+{% endstyle %}
+
+{% schema %}
+{ "name": "NELLE global styles", "settings": [] }
+{% endschema %}

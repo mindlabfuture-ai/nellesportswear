@@ -15,13 +15,15 @@
           }
         }
       },
-      "block_order": ["announcement-bar-0"],
+      "block_order": [
+        "announcement-bar-0"
+      ],
       "settings": {}
     },
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
@@ -34,7 +36,15 @@
         "padding_top": 12,
         "padding_bottom": 12
       }
+    },
+    "nelle-global": {
+      "type": "nelle-global",
+      "settings": {}
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header",
+    "nelle-global"
+  ]
 }

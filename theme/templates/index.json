@@ -3,25 +3,61 @@
     "hero": {
       "type": "nelle-hero",
       "settings": {
-        "eyebrow": "NELLE Sportswear",
+        "eyebrow": "Women's Activewear",
         "heading": "Strong Looks Good.",
         "text": "Performance leggings, sports bras and matching sets made to move with you, and to look incredible doing it.",
         "button_1_label": "Shop New Arrivals",
         "button_1_link": "shopify://collections/new-arrivals",
         "button_2_label": "Shop Sets",
-        "button_2_link": "shopify://collections/matching-sets"
+        "button_2_link": "shopify://collections/matching-sets",
+        "image": "shopify://shop_images/nelle-logo-full.png"
       }
     },
     "categories": {
       "type": "nelle-categories",
       "blocks": {
-        "c1": { "type": "category", "settings": { "label": "Leggings", "asset": "cat-leggings.png", "link": "shopify://collections/leggings" } },
-        "c2": { "type": "category", "settings": { "label": "Sports Bras", "asset": "cat-bras.png", "link": "shopify://collections/sports-bras" } },
-        "c3": { "type": "category", "settings": { "label": "Sets", "asset": "cat-sets.png", "link": "shopify://collections/matching-sets" } },
-        "c4": { "type": "category", "settings": { "label": "Shorts", "asset": "cat-shorts.png", "link": "shopify://collections/shorts" } }
+        "c1": {
+          "type": "category",
+          "settings": {
+            "label": "Leggings",
+            "asset": "cat-leggings.png",
+            "link": "shopify://collections/leggings"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "label": "Sports Bras",
+            "asset": "cat-bras.png",
+            "link": "shopify://collections/sports-bras"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "label": "Sets",
+            "asset": "cat-sets.png",
+            "link": "shopify://collections/matching-sets"
+          }
+        },
+        "c4": {
+          "type": "category",
+          "settings": {
+            "label": "Shorts",
+            "asset": "cat-shorts.png",
+            "link": "shopify://collections/shorts"
+          }
+        }
       },
-      "block_order": ["c1", "c2", "c3", "c4"],
-      "settings": { "heading": "Shop by category" }
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "heading": "Shop by category"
+      }
     },
     "new_arrivals": {
       "type": "featured-collection",
@@ -70,13 +106,41 @@
     "trust": {
       "type": "nelle-trust",
       "blocks": {
-        "t1": { "type": "item", "settings": { "title": "Free shipping", "text": "On orders over ₱1,500" } },
-        "t2": { "type": "item", "settings": { "title": "Squat-proof & sweat-wicking", "text": "Buttery-soft, four-way stretch fabric" } },
-        "t3": { "type": "item", "settings": { "title": "Easy returns", "text": "Not the right fit? We'll make it right" } }
+        "t1": {
+          "type": "item",
+          "settings": {
+            "title": "Free shipping",
+            "text": "On orders over ₱1,500"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "title": "Squat-proof & sweat-wicking",
+            "text": "Buttery-soft, four-way stretch fabric"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "title": "Easy returns",
+            "text": "Not the right fit? We'll make it right"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
       "settings": {}
     }
   },
-  "order": ["hero", "categories", "new_arrivals", "trust", "best_sellers"]
+  "order": [
+    "hero",
+    "categories",
+    "new_arrivals",
+    "trust",
+    "best_sellers"
+  ]
 }
