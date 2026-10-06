@@ -91,6 +91,15 @@ def garment(kind, c):
             body += f'<path d="M262,430 C262,560 290,800 332,1150" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".35" transform="translate(26,0)"/>'
             body += f'<path d="M738,430 C738,560 710,800 668,1150" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".35" transform="translate(-26,0)"/>'
         body += f'<text x="500" y="226" text-anchor="middle" font-family="Montserrat,Helvetica,Arial,sans-serif" font-size="22" letter-spacing="9" fill="{seam}" fill-opacity=".85">NELLE</text>'
+    elif kind == "tee":
+        d = ("M430,160 Q500,222 570,160 L670,185 L805,335 L748,405 L692,362 L698,770 "
+             "Q500,792 302,770 L308,362 L252,405 L195,335 L330,185 Z")
+        body += f'<g filter="url(#fabric)"><path d="{d}" fill="{fill}"/></g>'
+        body += f'<path d="{d}" fill="none" stroke="{rim}" stroke-width="2.2" stroke-opacity=".55"/>'
+        body += f'<path d="M430,160 Q500,222 570,160" fill="none" stroke="{seam}" stroke-width="5" stroke-opacity=".6"/>'
+        body += f'<path d="M330,185 L308,362 M670,185 L692,362" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".45"/>'
+        body += f'<path d="M304,744 Q500,766 696,744" fill="none" stroke="{seam}" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".55"/>'
+        body += f'<text x="500" y="330" text-anchor="middle" font-family="Montserrat,Helvetica,Arial,sans-serif" font-size="22" letter-spacing="9" fill="{seam}" fill-opacity=".85">NELLE</text>'
     else:
         d = bra_path()
         body += '<defs><clipPath id="clipBand"><rect x="0" y="620" width="1000" height="120"/></clipPath></defs>'
@@ -133,6 +142,7 @@ PALETTES = {
     "blush": dict(fill="#d9a597", band="#c98f81", seam="#f6d9cf", rim="#ffe9e1"),
     "noir": dict(fill="#2b2b31", band="#212126", seam="#d9a597", rim="#e8c2b6"),
     "mauve": dict(fill="#946273", band="#7f5262", seam="#e9c3cf", rim="#f5d9e1"),
+    "cocoa": dict(fill="#9a7060", band="#84594a", seam="#f0d4c6", rim="#f8e6dc"),
     "sage": dict(fill="#8fa593", band="#7a917f", seam="#dfeadf", rim="#eef6ee"),
 }
 
@@ -149,6 +159,13 @@ PRODUCTS = {
     "aura-matching-set": ("set", "blush"),
     "noir-matching-set": ("set", "noir"),
     "sage-matching-set": ("set", "sage"),
+    "mauve-matching-set": ("set", "mauve"),
+    "cocoa-shorts-set": ("setshorts", "cocoa"),
+    "sage-pocket-leggings": ("leggings", "sage"),
+    "sage-train-bra": ("bra", "sage"),
+    "cocoa-tank-bra": ("bra", "cocoa"),
+    "blush-drawstring-shorts": ("shorts", "blush"),
+    "noir-training-tee": ("tee", "noir"),
 }
 
 
@@ -159,6 +176,13 @@ def build(handle, kind, pal, transparent=False):
             f'<g transform="translate(250,60) scale(.5)">{garment("bra", c)}</g>'
             f'<g transform="translate(160,410) scale(.68)">{garment("leggings", c)}</g>'
         )
+    elif kind == "setshorts":
+        inner = (
+            f'<g transform="translate(250,60) scale(.5)">{garment("bra", c)}</g>'
+            f'<g transform="translate(115,375) scale(.77)">{garment("shorts", c)}</g>'
+        )
+    elif kind == "tee":
+        inner = f'<g transform="translate(-75,110) scale(1.15)">{garment(kind, c)}</g>'
     elif kind == "bra":
         inner = f'<g transform="translate(-75,117) scale(1.15)">{garment(kind, c)}</g>'
     elif kind == "shorts":

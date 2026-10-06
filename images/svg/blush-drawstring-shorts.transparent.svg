@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250"><defs>
+<filter id="fabric" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="vol"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="noise"/>
+  <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 -0.35" result="grain"/>
+  <feComposite in="vol" in2="grain" operator="arithmetic" k1="0" k2="1" k3="0.09" k4="0" result="bump"/>
+  <feDiffuseLighting in="bump" surfaceScale="11" diffuseConstant="1.15" lighting-color="#ffffff" result="diffuse">
+    <feDistantLight azimuth="235" elevation="52"/>
+  </feDiffuseLighting>
+  <feSpecularLighting in="vol" surfaceScale="10" specularConstant="0.55" specularExponent="22" lighting-color="#fff4ee" result="spec">
+    <feDistantLight azimuth="235" elevation="48"/>
+  </feSpecularLighting>
+  <feGaussianBlur in="SourceAlpha" stdDeviation="38" result="vol2"/>
+  <feDiffuseLighting in="vol2" surfaceScale="20" diffuseConstant="1.0" lighting-color="#ffffff" result="diffuse2">
+    <feDistantLight azimuth="230" elevation="38"/>
+  </feDiffuseLighting>
+  <feComposite in="diffuse" in2="diffuse2" operator="arithmetic" k1="1.05" k2="0" k3="0" k4="0" result="diffuseAll"/>
+  <feComposite in="SourceGraphic" in2="diffuseAll" operator="arithmetic" k1="1.45" k2="0" k3="0" k4="0" result="lit"/>
+  <feComposite in="spec" in2="lit" operator="arithmetic" k1="0" k2="0.55" k3="1" k4="0" result="lit2"/>
+  <feComposite in="lit2" in2="SourceAlpha" operator="in"/>
+</filter>
+</defs><g transform="translate(-75,150) scale(1.15)"><defs><clipPath id="clipTopshorts"><rect x="0" y="0" width="1000" height="262"/></clipPath></defs><g filter="url(#fabric)"><path d="M292,150 C288.7,175.0 277.0,253.3 272.0,300.0 C267.0,346.7 264.3,383.3 262.0,430.0 C259.7,476.7 258.0,530.0 258.0,580.0 C258.0,630.0 261.3,705.0 262.0,730.0 L484,730 C485.0,711.7 487.8,655.0 490.0,620.0 C492.2,585.0 495.8,536.7 497.0,520.0 L500,470 L503,520 C504.2,536.7 507.8,585.0 510.0,620.0 C512.2,655.0 515.0,711.7 516.0,730.0 L738,730 C738.7,705.0 742.0,630.0 742.0,580.0 C742.0,530.0 740.3,476.7 738.0,430.0 C735.7,383.3 733.0,346.7 728.0,300.0 C723.0,253.3 711.3,175.0 708.0,150.0 Q500,172 292,150 Z" fill="#d9a597"/><path d="M292,150 C288.7,175.0 277.0,253.3 272.0,300.0 C267.0,346.7 264.3,383.3 262.0,430.0 C259.7,476.7 258.0,530.0 258.0,580.0 C258.0,630.0 261.3,705.0 262.0,730.0 L484,730 C485.0,711.7 487.8,655.0 490.0,620.0 C492.2,585.0 495.8,536.7 497.0,520.0 L500,470 L503,520 C504.2,536.7 507.8,585.0 510.0,620.0 C512.2,655.0 515.0,711.7 516.0,730.0 L738,730 C738.7,705.0 742.0,630.0 742.0,580.0 C742.0,530.0 740.3,476.7 738.0,430.0 C735.7,383.3 733.0,346.7 728.0,300.0 C723.0,253.3 711.3,175.0 708.0,150.0 Q500,172 292,150 Z" fill="#c98f81" clip-path="url(#clipTopshorts)"/></g><path d="M292,150 C288.7,175.0 277.0,253.3 272.0,300.0 C267.0,346.7 264.3,383.3 262.0,430.0 C259.7,476.7 258.0,530.0 258.0,580.0 C258.0,630.0 261.3,705.0 262.0,730.0 L484,730 C485.0,711.7 487.8,655.0 490.0,620.0 C492.2,585.0 495.8,536.7 497.0,520.0 L500,470 L503,520 C504.2,536.7 507.8,585.0 510.0,620.0 C512.2,655.0 515.0,711.7 516.0,730.0 L738,730 C738.7,705.0 742.0,630.0 742.0,580.0 C742.0,530.0 740.3,476.7 738.0,430.0 C735.7,383.3 733.0,346.7 728.0,300.0 C723.0,253.3 711.3,175.0 708.0,150.0 Q500,172 292,150 Z" fill="none" stroke="#ffe9e1" stroke-width="2.2" stroke-opacity=".55"/><path d="M278,262 Q500,284 722,262" fill="none" stroke="#f6d9cf" stroke-width="2.2" stroke-opacity=".7"/><path d="M281,270 Q500,292 719,270" fill="none" stroke="#f6d9cf" stroke-width="1.2" stroke-dasharray="5 5" stroke-opacity=".5"/><path d="M500,284 L500,470" fill="none" stroke="#f6d9cf" stroke-width="2" stroke-opacity=".55"/><text x="500" y="226" text-anchor="middle" font-family="Montserrat,Helvetica,Arial,sans-serif" font-size="22" letter-spacing="9" fill="#f6d9cf" fill-opacity=".85">NELLE</text></g></svg>

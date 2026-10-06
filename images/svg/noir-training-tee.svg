@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250"><defs>
+<filter id="fabric" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="15" result="vol"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="noise"/>
+  <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 -0.35" result="grain"/>
+  <feComposite in="vol" in2="grain" operator="arithmetic" k1="0" k2="1" k3="0.09" k4="0" result="bump"/>
+  <feDiffuseLighting in="bump" surfaceScale="11" diffuseConstant="1.15" lighting-color="#ffffff" result="diffuse">
+    <feDistantLight azimuth="235" elevation="52"/>
+  </feDiffuseLighting>
+  <feSpecularLighting in="vol" surfaceScale="10" specularConstant="0.55" specularExponent="22" lighting-color="#fff4ee" result="spec">
+    <feDistantLight azimuth="235" elevation="48"/>
+  </feSpecularLighting>
+  <feGaussianBlur in="SourceAlpha" stdDeviation="38" result="vol2"/>
+  <feDiffuseLighting in="vol2" surfaceScale="20" diffuseConstant="1.0" lighting-color="#ffffff" result="diffuse2">
+    <feDistantLight azimuth="230" elevation="38"/>
+  </feDiffuseLighting>
+  <feComposite in="diffuse" in2="diffuse2" operator="arithmetic" k1="1.05" k2="0" k3="0" k4="0" result="diffuseAll"/>
+  <feComposite in="SourceGraphic" in2="diffuseAll" operator="arithmetic" k1="1.45" k2="0" k3="0" k4="0" result="lit"/>
+  <feComposite in="spec" in2="lit" operator="arithmetic" k1="0" k2="0.55" k3="1" k4="0" result="lit2"/>
+  <feComposite in="lit2" in2="SourceAlpha" operator="in"/>
+</filter>
+</defs><rect width="1000" height="1250" fill="#050505"/><radialGradient id="glow" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a2022" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient><rect width="1000" height="1250" fill="url(#glow)"/><g transform="translate(-75,110) scale(1.15)"><g filter="url(#fabric)"><path d="M430,160 Q500,222 570,160 L670,185 L805,335 L748,405 L692,362 L698,770 Q500,792 302,770 L308,362 L252,405 L195,335 L330,185 Z" fill="#2b2b31"/></g><path d="M430,160 Q500,222 570,160 L670,185 L805,335 L748,405 L692,362 L698,770 Q500,792 302,770 L308,362 L252,405 L195,335 L330,185 Z" fill="none" stroke="#e8c2b6" stroke-width="2.2" stroke-opacity=".55"/><path d="M430,160 Q500,222 570,160" fill="none" stroke="#d9a597" stroke-width="5" stroke-opacity=".6"/><path d="M330,185 L308,362 M670,185 L692,362" fill="none" stroke="#d9a597" stroke-width="2" stroke-opacity=".45"/><path d="M304,744 Q500,766 696,744" fill="none" stroke="#d9a597" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".55"/><text x="500" y="330" text-anchor="middle" font-family="Montserrat,Helvetica,Arial,sans-serif" font-size="22" letter-spacing="9" fill="#d9a597" fill-opacity=".85">NELLE</text></g></svg>
