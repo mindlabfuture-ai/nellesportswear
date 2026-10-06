@@ -33,6 +33,10 @@ def leggings_path(length="full"):
         outer = [(292, 150), (272, 300), (262, 430), (268, 600), (295, 800), (318, 980), (332, 1150)]
         inner = [(440, 1150), (452, 980), (470, 800), (488, 620), (498, 500)]
         yb = 1150
+    elif length == "flare":
+        outer = [(292, 150), (272, 300), (262, 430), (262, 600), (250, 820), (215, 1000), (190, 1150)]
+        inner = [(420, 1150), (440, 1000), (468, 800), (488, 620), (498, 500)]
+        yb = 1150
     else:  # biker shorts
         outer = [(292, 150), (272, 300), (262, 430), (258, 580), (262, 730)]
         inner = [(484, 730), (490, 620), (497, 520)]
@@ -73,8 +77,8 @@ def garment(kind, c):
     """Return svg group content for one garment in a 1000x1250 local space."""
     fill, band, seam, rim = c["fill"], c["band"], c["seam"], c["rim"]
     body = ""
-    if kind in ("leggings", "shorts"):
-        d, yb = leggings_path("full" if kind == "leggings" else "short")
+    if kind in ("leggings", "shorts", "flare"):
+        d, yb = leggings_path({"leggings": "full", "flare": "flare"}.get(kind, "short"))
         body += f'<defs><clipPath id="clipTop{kind}"><rect x="0" y="0" width="1000" height="262"/></clipPath></defs>'
         body += f'<g filter="url(#fabric)"><path d="{d}" fill="{fill}"/>'
         body += f'<path d="{d}" fill="{band}" clip-path="url(#clipTop{kind})"/></g>'
@@ -83,7 +87,7 @@ def garment(kind, c):
         body += f'<path d="M278,262 Q500,284 722,262" fill="none" stroke="{seam}" stroke-width="2.2" stroke-opacity=".7"/>'
         body += f'<path d="M281,270 Q500,292 719,270" fill="none" stroke="{seam}" stroke-width="1.2" stroke-dasharray="5 5" stroke-opacity=".5"/>'
         body += f'<path d="M500,284 L500,470" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".55"/>'
-        if kind == "leggings":
+        if kind in ("leggings", "flare"):
             body += f'<path d="M262,430 C262,560 290,800 332,1150" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".35" transform="translate(26,0)"/>'
             body += f'<path d="M738,430 C738,560 710,800 668,1150" fill="none" stroke="{seam}" stroke-width="2" stroke-opacity=".35" transform="translate(-26,0)"/>'
         body += f'<text x="500" y="226" text-anchor="middle" font-family="Montserrat,Helvetica,Arial,sans-serif" font-size="22" letter-spacing="9" fill="{seam}" fill-opacity=".85">NELLE</text>'
@@ -137,6 +141,8 @@ PRODUCTS = {
     "aura-high-waist-leggings": ("leggings", "blush"),
     "sculpt-seamless-leggings": ("leggings", "noir"),
     "contour-biker-shorts": ("shorts", "mauve"),
+    "soft-flare-leggings": ("flare", "mauve"),
+    "scrunch-booty-shorts": ("shorts", "sage"),
     "halo-sports-bra": ("bra", "blush"),
     "core-racerback-bra": ("bra", "noir"),
     "luxe-longline-bra": ("bra", "mauve"),
