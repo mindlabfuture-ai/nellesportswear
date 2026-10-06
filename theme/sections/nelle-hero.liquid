@@ -1,0 +1,44 @@
+<section class="nelle-hero">
+  <div class="nelle-hero__copy">
+    <p class="nelle-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="nelle-hero__title">{{ section.settings.heading }}</h1>
+    <p class="nelle-hero__text">{{ section.settings.text }}</p>
+    <div class="nelle-hero__actions">
+      <a class="nelle-btn nelle-btn--solid" href="{{ section.settings.button_1_link }}">{{ section.settings.button_1_label }}</a>
+      <a class="nelle-btn" href="{{ section.settings.button_2_link }}">{{ section.settings.button_2_label }}</a>
+    </div>
+  </div>
+  <div class="nelle-hero__media">
+    <img src="{{ 'nelle-hero.png' | asset_url }}" alt="NELLE blush matching sports bra and leggings set" width="1000" height="1250" loading="eager">
+  </div>
+</section>
+
+{% stylesheet %}
+  .nelle-hero { display: grid; grid-template-columns: 1fr; background: #050505; color: #f5e6e0; }
+  .nelle-hero__copy { padding: 6rem 2.4rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+  .nelle-hero__eyebrow { letter-spacing: .5em; font-size: 1.2rem; color: #d9a597; margin: 0 0 1.6rem; text-transform: uppercase; }
+  .nelle-hero__title { font-size: clamp(3.6rem, 8vw, 8rem); line-height: 1; margin: 0 0 2rem; font-weight: 300; letter-spacing: .04em; background: linear-gradient(135deg, #f6d9cf, #d9a597 55%, #b9786a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .nelle-hero__text { max-width: 44rem; font-size: 1.7rem; opacity: .8; margin: 0 0 3rem; }
+  .nelle-hero__actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .nelle-btn { display: inline-block; padding: 1.4rem 3rem; border: 1px solid #d9a597; color: #f5e6e0; text-decoration: none; letter-spacing: .2em; font-size: 1.2rem; text-transform: uppercase; transition: background .2s, color .2s; }
+  .nelle-btn:hover, .nelle-btn--solid { background: #d9a597; color: #050505; }
+  .nelle-btn--solid:hover { background: #f6d9cf; }
+  .nelle-hero__media img { display: block; width: 100%; height: auto; max-height: 90vh; object-fit: contain; }
+  @media (min-width: 990px) { .nelle-hero { grid-template-columns: 1fr 1fr; min-height: 80vh; align-items: center; } .nelle-hero__copy { padding: 6rem 6rem 6rem 8rem; } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "NELLE hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NELLE Sportswear" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Strong Looks Good." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Performance leggings, sports bras and matching sets made to move with you, and to look incredible doing it." },
+    { "type": "text", "id": "button_1_label", "label": "Button 1 label", "default": "Shop New Arrivals" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_label", "label": "Button 2 label", "default": "Shop Sets" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" }
+  ],
+  "presets": [{ "name": "NELLE hero" }]
+}
+{% endschema %}

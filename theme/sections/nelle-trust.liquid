@@ -1,0 +1,32 @@
+<section class="nelle-trust">
+  {%- for block in section.blocks -%}
+    <div class="nelle-trust__item" {{ block.shopify_attributes }}>
+      <strong>{{ block.settings.title }}</strong>
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {%- endfor -%}
+</section>
+
+{% stylesheet %}
+  .nelle-trust { display: grid; grid-template-columns: 1fr; gap: 2rem; padding: 4rem 2rem; background: #0e0c0d; color: #f5e6e0; text-align: center; border-top: 1px solid rgba(217,165,151,.2); border-bottom: 1px solid rgba(217,165,151,.2); }
+  .nelle-trust__item strong { display: block; letter-spacing: .25em; text-transform: uppercase; font-size: 1.3rem; color: #d9a597; margin-bottom: .6rem; }
+  .nelle-trust__item span { opacity: .75; font-size: 1.4rem; }
+  @media (min-width: 750px) { .nelle-trust { grid-template-columns: repeat(3, 1fr); } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "NELLE trust bar",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Free shipping" },
+        { "type": "text", "id": "text", "label": "Text", "default": "On orders over ₱1,500" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NELLE trust bar", "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }] }]
+}
+{% endschema %}

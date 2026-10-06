@@ -1,0 +1,31 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": { "type": "text", "settings": { "heading": "Shop", "subtext": "<p><a href=\"/collections/new-arrivals\">New Arrivals</a></p><p><a href=\"/collections/leggings\">Leggings</a></p><p><a href=\"/collections/sports-bras\">Sports Bras</a></p><p><a href=\"/collections/matching-sets\">Sets</a></p>" } },
+        "help": { "type": "text", "settings": { "heading": "Help", "subtext": "<p><a href=\"/pages/contact\">Contact</a></p><p><a href=\"/pages/shipping\">Shipping</a></p><p><a href=\"/pages/returns\">Returns</a></p><p><a href=\"/pages/size-guide\">Size Guide</a></p><p><a href=\"/pages/faq\">FAQ</a></p>" } },
+        "about": { "type": "text", "settings": { "heading": "About", "subtext": "<p><a href=\"/pages/our-story\">Our Story</a></p><p><a href=\"/blogs/news\">NELLE Journal</a></p>" } },
+        "legal": { "type": "text", "settings": { "heading": "Legal", "subtext": "<p><a href=\"/policies/privacy-policy\">Privacy</a></p><p><a href=\"/policies/terms-of-service\">Terms</a></p>" } }
+      },
+      "block_order": ["shop", "help", "about", "legal"],
+      "settings": {
+        "color_scheme": "background-2",
+        "newsletter_enable": true,
+        "newsletter_heading": "Join the NELLE list",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["footer"]
+}

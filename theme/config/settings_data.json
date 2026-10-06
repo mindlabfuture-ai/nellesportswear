@@ -1,0 +1,64 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "logo_width": 90,
+      "colors_solid_button_labels": "#0a0a0a",
+      "colors_accent_1": "#d9a597",
+      "gradient_accent_1": "",
+      "colors_accent_2": "#e9c3cf",
+      "gradient_accent_2": "",
+      "colors_text": "#f5e6e0",
+      "colors_outline_button_labels": "#d9a597",
+      "colors_background_1": "#050505",
+      "gradient_background_1": "",
+      "colors_background_2": "#121012",
+      "gradient_background_2": "",
+      "type_header_font": "montserrat_n4",
+      "heading_scale": 100,
+      "type_body_font": "montserrat_n4",
+      "body_scale": 100,
+      "page_width": 1600,
+      "spacing_sections": 0,
+      "buttons_border_thickness": 1,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "card_style": "standard",
+      "card_image_padding": 0,
+      "card_text_alignment": "center",
+      "card_color_scheme": "background-2",
+      "card_border_thickness": 0,
+      "card_corner_radius": 0,
+      "collection_card_corner_radius": 0,
+      "media_radius": 0,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 0,
+      "sale_badge_color_scheme": "accent-1",
+      "sold_out_badge_color_scheme": "inverse",
+      "brand_headline": "NELLE Sportswear",
+      "brand_description": "<p>Strong Looks Good.</p>",
+      "social_instagram_link": "https://www.instagram.com/",
+      "social_facebook_link": "https://www.facebook.com/",
+      "social_tiktok_link": "https://www.tiktok.com/",
+      "predictive_search_enabled": true,
+      "currency_code_enabled": false,
+      "cart_type": "drawer",
+      "show_vendor": false,
+      "show_cart_note": false,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      }
+    }
+  }
+}

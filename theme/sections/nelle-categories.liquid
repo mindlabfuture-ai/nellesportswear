@@ -1,0 +1,43 @@
+<section class="nelle-cats">
+  <h2 class="nelle-cats__title">{{ section.settings.heading }}</h2>
+  <div class="nelle-cats__grid">
+    {%- for block in section.blocks -%}
+      <a class="nelle-cat" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.asset != blank -%}
+          <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy" width="1000" height="1250">
+        {%- endif -%}
+        <span class="nelle-cat__label">{{ block.settings.label }}</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .nelle-cats { background: #050505; color: #f5e6e0; padding: 5rem 2rem; }
+  .nelle-cats__title { text-align: center; letter-spacing: .3em; font-weight: 300; text-transform: uppercase; font-size: 2rem; margin: 0 0 3rem; color: #d9a597; }
+  .nelle-cats__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 140rem; margin: 0 auto; }
+  .nelle-cat { position: relative; display: block; background: #050505; border: 1px solid rgba(217,165,151,.25); text-decoration: none; color: inherit; overflow: hidden; }
+  .nelle-cat img { display: block; width: 100%; height: auto; transition: transform .5s; }
+  .nelle-cat:hover img { transform: scale(1.04); }
+  .nelle-cat__label { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem; text-align: center; letter-spacing: .3em; text-transform: uppercase; font-size: 1.3rem; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
+  @media (min-width: 990px) { .nelle-cats__grid { grid-template-columns: repeat(4, 1fr); } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "NELLE categories",
+  "settings": [{ "type": "text", "id": "heading", "label": "Heading", "default": "Shop by category" }],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Leggings" },
+        { "type": "text", "id": "asset", "label": "Theme asset file name", "default": "cat-leggings.png" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NELLE categories", "blocks": [{ "type": "category" }, { "type": "category" }] }]
+}
+{% endschema %}
